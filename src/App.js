@@ -32,7 +32,7 @@ class App extends Component{
                   name: {firstName: 'Sirius', lastName: 'Cyrus'} //Object to be shallow merged against state
                 };
               }, 
-              () => {                   //Callback Func
+              () => {                   //Callback Function
                 console.log(this.state);
               }); 
             }}
