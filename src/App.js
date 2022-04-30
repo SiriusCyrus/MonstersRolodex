@@ -24,17 +24,24 @@ class App extends Component{
             Hello! { this.state.name.firstName } { this.state.name.lastName }, Hi! I work at {this.state.company}
           </p>
           <button 
-            onClick={()=> 
+            onClick=
+            {()=> 
             {
-              this.setState({name: {firstName: 'Sirius', lastName: 'Cyrus' }}) //Shallow Merge using setState
-              console.log(this.state);
+              this.setState(() => {     //Passing Function
+                return {
+                  name: {firstName: 'Sirius', lastName: 'Cyrus'} //Object to be shallow merged against state
+                };
+              }, 
+              () => {                   //Callback Func
+                console.log(this.state);
+              }); 
             }}
-          >Change Name
+            >
+              Change Name
           </button>  
         </header>
       </div>
     );
   }
 }
-
 export default App;
