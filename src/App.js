@@ -7,40 +7,33 @@ class App extends Component{
   constructor()
   {
     super(); 
-    this.state = 
-    {
-      name: {firstName: 'Aniruddha', lastName: 'Nag'},
-      company: 'ZTM'
-    }
+    this.state = {
+      monsters: [
+        {
+          name: 'Linda'
+        },
+        {
+          name: 'Frank'
+        },
+        {
+          name: 'Jackie'
+        }
+      ]
+    };
   }
 
   render()
   {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello! { this.state.name.firstName } { this.state.name.lastName }, Hi! I work at {this.state.company}
-          </p>
-          <button 
-            onClick=
-            {()=> 
-            {
-              this.setState(() => {     //Passing Function
-                return {
-                  name: {firstName: 'Sirius', lastName: 'Cyrus'} //Object to be shallow merged against state
-                };
-              }, 
-              () => {                   //Callback Function
-                console.log(this.state);
-              }); 
-            }}
-            >
-              Change Name
-          </button>  
-        </header>
-      </div>
+       {
+        //Passing a callback function through .map to invoke every single elements from the array.
+         this.state.monsters.map((monster)=> 
+         {
+           return <h1>{monster.name}</h1>
+         })
+       }
+      </div> 
     );
   }
 }
