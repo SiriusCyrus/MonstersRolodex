@@ -17,6 +17,9 @@ class App extends Component{
         },
         {
           name: 'Jackie'
+        },
+        {
+          name: 'Cyrus'
         }
       ]
     };
